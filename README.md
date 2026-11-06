@@ -55,6 +55,42 @@ Odin-4 supports dynamic 2-bit (4-color) palette switching via `set_palette(id)`.
 | **2** | **Luminous** | High-contrast, vibrant cyberpunk glow | [View on Lospec](https://lospec.com/palette-list/luminous) |
 | **3** | **2-Bit Grayscale** | Classic monochrome retro computing shade | [View on Lospec](https://lospec.com/palette-list/2-bit-grayscale) |
 
+## 📖 Lua Scripting API Reference
+
+Odin-4 exposes a lightweight built-in API for game scripting. All functions are categorized below:
+
+### 🎨 Graphics
+| Function | Parameters | Description |
+| :--- | :--- | :--- |
+| `cls` | `(color)` | Clears the screen with a 2-bit palette index (`0-3`). |
+| `set_palette` | `(id)` | Sets active theme (`0`: Blueprint, `1`: Gameboy, `2`: Luminous, `3`: Grayscale). |
+| `pset` | `(x, y, color)` | Draws a single pixel at the specified coordinate. |
+| `rect` | `(x0, y0, x1, y1, color)` | Draws an outlined rectangle (inclusive coordinates). |
+| `rectfill` | `(x0, y0, x1, y1, color)` | Draws a filled rectangle (inclusive coordinates). |
+| `spr` | `(sprite_id, x, y, flip_x?, flip_y?)` | Draws an 8×8 sprite (`0-127`), color `0` is transparent. |
+| `map` | `(cell_x, cell_y, screen_x, screen_y, w, h)` | Renders a section of the 40×25 tilemap. |
+| `text` | `(str, x, y, color)` | Draws text using the built-in 3×5 font (auto uppercase). |
+
+### 🕹️ Input
+| Function | Parameters | Description |
+| :--- | :--- | :--- |
+| `btn` | `(id)` | Returns `true` if button is down. IDs: `0` (Right), `1` (Left), `2` (Up), `3` (Down), `4` (Button A / Z), `5` (Button B / X). |
+
+### ⚙️ System & Memory
+| Function | Parameters | Description |
+| :--- | :--- | :--- |
+| `frame_count` | `()` | Returns current frame counter (`0` to `255`). |
+| `peek` | `(address)` | Reads a byte from user-accessible memory (`0-255`). |
+| `poke` | `(address, value)` | Writes a byte value to user-accessible memory. |
+| `check_flag` | `(sprite_id, flag)` | Checks whether a sprite metadata flag (`0-7`) is enabled (`0` or `1`). |
+
+### 🎵 Audio
+| Function | Parameters | Description |
+| :--- | :--- | :--- |
+| `sfx_ch1` | `(freq, vol, duration, slide, duty)` | Plays a pulse wave sound effect on audio channel 1. |
+| `sfx_ch2` | `(freq, vol, duration)` | Plays a noise wave sound effect on audio channel 2. |
+| `sfx_stop` | `(channel)` | Stops sound playback on the specified channel (`1` or `2`). |
+
 ## 💡 Example
 
 Here is a quick look at a simple bouncy pixel example running on the Odin-4 console:
