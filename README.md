@@ -54,3 +54,8 @@ Odin-4 supports dynamic 2-bit (4-color) palette switching via `set_palette(id)`.
 | **1** | **Kirokaze Gameboy** | Classic handheld green-scale nostalgic aesthetic | [View on Lospec](https://lospec.com/palette-list/kirokaze-gameboy) |
 | **2** | **Luminous** | High-contrast, vibrant cyberpunk glow | [View on Lospec](https://lospec.com/palette-list/luminous) |
 | **3** | **2-Bit Grayscale** | Classic monochrome retro computing shade | [View on Lospec](https://lospec.com/palette-list/2-bit-grayscale) |
+
+## Example
+<p align="center">
+  <img src="examples/bouncy_ball.gif" width="320" alt="Odin-4 Gameplay Example">
+</p>
