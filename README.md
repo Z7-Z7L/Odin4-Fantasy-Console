@@ -91,9 +91,9 @@ Odin-4 exposes a lightweight built-in API for game scripting. All functions are 
 | `sfx_ch2` | `(freq, vol, duration)` | Plays a noise wave sound effect on audio channel 2. |
 | `sfx_stop` | `(channel)` | Stops sound playback on the specified channel (`1` or `2`). |
 
-## 💡 Example
+## 🎬 In Action
 
-Here is a quick look at a simple bouncy pixel example running on the Odin-4 console:
+Here is a quick look at an example application running on the Odin-4 console:
 
 <p align="center">
   <img src="examples/bouncy_ball.gif" width="320" alt="Odin-4 Bouncy Pixel Example">
