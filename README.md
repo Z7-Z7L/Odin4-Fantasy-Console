@@ -2,6 +2,15 @@
 
 A custom fantasy console built from scratch using the **Odin** programming language, featuring **Raylib** for rendering and **Lua 5.4** for game scripting.
 
+## 🖥️ Window Controls
+
+Resize the console window while playing:
+
+| Key | Action |
+| :---: | :--- |
+| **1** | Make the window smaller |
+| **2** | Make the window bigger |
+
 ## 🛠️ Technical Specifications
 
 | Feature | Spec | Details |
