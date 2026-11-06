@@ -1,0 +1,2 @@
+To export games you either use the export tool exe in the terminal like this: & '.\Odin 4 Export Tool.exe' {Your game folder path}
+or drop the folder into the export tool .exe file (The game.cart file will be inside your game folder after exporting)
