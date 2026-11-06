@@ -55,7 +55,10 @@ Odin-4 supports dynamic 2-bit (4-color) palette switching via `set_palette(id)`.
 | **2** | **Luminous** | High-contrast, vibrant cyberpunk glow | [View on Lospec](https://lospec.com/palette-list/luminous) |
 | **3** | **2-Bit Grayscale** | Classic monochrome retro computing shade | [View on Lospec](https://lospec.com/palette-list/2-bit-grayscale) |
 
-## Example
+## 💡 Example
+
+Here is a quick look at a simple bouncy pixel example running on the Odin-4 console:
+
 <p align="center">
-  <img src="examples/bouncy_ball.gif" width="320" alt="Odin-4 Gameplay Example">
+  <img src="examples/bouncy_ball.gif" width="320" alt="Odin-4 Bouncy Pixel Example">
 </p>
