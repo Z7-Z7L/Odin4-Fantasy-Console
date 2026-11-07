@@ -104,6 +104,14 @@ function btn(id) end
 ---@return integer frames Current frame counter.
 function frame_count() end
 
+---Returns screen width.
+---@return integer screen width.
+function get_width() end
+
+---Returns screen height.
+---@return integer screen height.
+function get_height() end
+
 --------------------------------------------------
 -- AUDIO
 --------------------------------------------------

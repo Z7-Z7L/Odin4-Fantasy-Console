@@ -318,6 +318,16 @@ l_text :: proc "c" (L: ^lua.State) -> i32 {
 	return 0;
 }
 
+l_get_width :: proc "c" (L: ^lua.State) -> i32 {
+	lua.pushinteger(L, WIDTH);
+	return 1;
+}
+
+l_get_height :: proc "c" (L: ^lua.State) -> i32 {
+	lua.pushinteger(L, HEIGHT);
+	return 1;
+}
+
 register_lua_bindings :: proc(L: ^lua.State) {
 	lua.pushcfunction(L, l_cls);
 	lua.setglobal(L, "cls");
@@ -363,6 +373,12 @@ register_lua_bindings :: proc(L: ^lua.State) {
 
 	lua.pushcfunction(L, l_text);
 	lua.setglobal(L, "text");
+
+	lua.pushcfunction(L, l_get_width);
+	lua.setglobal(L, "get_width");
+
+	lua.pushcfunction(L, l_get_height);
+	lua.setglobal(L, "get_height");
 }
 
 call_lua_func :: proc(L: ^lua.State, name: cstring) {

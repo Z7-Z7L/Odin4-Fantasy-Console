@@ -16,7 +16,7 @@ Resize the console window while playing:
 | Feature | Spec | Details |
 | --- | --- | --- |
 | **CPU / Scripting** | Lua 5.4 | Standardized at 60 FPS|
-| **Display** | 80 × 64 pixels | Low-res retro canvas with a 2-bit color palette (4 colors) |
+| **Display** | 128 × 128 pixels | Low-res retro canvas with a 2-bit color palette (4 colors) |
 | **Memory** | 16 KB RAM | User-accessible memory space via custom `peek` and `poke` APIs |
 | **Input** | 6 Buttons | **Arrows**, **Z** (Button A), **X** (Button B) |
 | **Audio** | 2 Channels | Dedicated Pulse wave and Noise wave sound channels |
@@ -80,6 +80,8 @@ Odin-4 exposes a lightweight built-in API for game scripting. All functions are 
 | Function | Parameters | Description |
 | :--- | :--- | :--- |
 | `frame_count` | `()` | Returns current frame counter (`0` to `255`). |
+| `get_width` | `()` | Returns screen width (`128`). |
+| `get_height` | `()` | Returns screen height (`128`). |
 | `peek` | `(address)` | Reads a byte from user-accessible memory (`0-255`). |
 | `poke` | `(address, value)` | Writes a byte value to user-accessible memory. |
 | `check_flag` | `(sprite_id, flag)` | Checks whether a sprite metadata flag (`0-7`) is enabled (`0` or `1`). |

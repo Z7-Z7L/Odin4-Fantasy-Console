@@ -131,7 +131,7 @@ Grayscale_Palette :: [4]rl.Color {
 }
 
 /* ---- Specs ---- */
-WIDTH, HEIGHT :: 80, 64
+WIDTH, HEIGHT :: 128, 128
 FPS :: 60
 
 /* ---- Region size ---- */

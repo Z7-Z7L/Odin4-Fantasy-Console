@@ -16,7 +16,7 @@ ResizeAndCenterScreen :: proc(scaler: i32) {
 		(rl.GetMonitorHeight(rl.GetCurrentMonitor()) - rl.GetScreenHeight()) / 2
 	);
 }
-screen_scaler: i32 = 14;
+screen_scaler: i32 = 6;
 
 main :: proc() {
 	// Dropped .cart file
