@@ -1,5 +1,6 @@
 package editor
 
+import "core:path/filepath"
 import "core:math"
 import rl "vendor:raylib"
 import "core:fmt"
@@ -58,12 +59,22 @@ EDITORS :: enum {
 }
 
 main :: proc() {
+	folder := os.args[1];
+
+	if (!os.is_dir(folder)) {
+		fmt.println("Not a folder:", folder);
+		return
+	}
+
+	// assets.bin path
+	assets_path := filepath.join({folder, "assets.bin"}, context.temp_allocator);
+
   // Initialization
   rl.InitWindow(WIDTH * screen_scaler, HEIGHT * screen_scaler, "Odin4 editor");
   rl.SetTargetFPS(FPS);
 
   // Load assets.bin file if there is one
-  LoadAssets();
+  LoadAssets(assets_path);
 
   mouse_pos: rl.Vector2;
 
@@ -205,7 +216,7 @@ main :: proc() {
     UpdateBTN(&tilemap_btn, mouse_pos);
 
     // Buttons
-    if (save_btn.state == .PRESSED) {SaveToAssets()}
+    if (save_btn.state == .PRESSED) {SaveToAssets(assets_path)}
     if (sprite_btn.state == .PRESSED) {
     	current_editor = .Sprite;
     	sprite_btn.selected = true;
@@ -614,7 +625,7 @@ DrawBTN :: proc(btn: BTN, tint_color: rl.Color) {
 }
 
 // Saves assets to assets.bin file
-SaveToAssets :: proc() {
+SaveToAssets :: proc(file_path: string) {
 	out_data := make([]u8, len(sprites) + len(sprite_flags) + len(tilemap));
 	defer delete(out_data);
 
@@ -623,14 +634,14 @@ SaveToAssets :: proc() {
 	copy(out_data[SPRITES_SIZE:], sprite_flags[:]);
 	copy(out_data[SPRITES_SIZE+FLAGS_SIZE:], tilemap[:]);
 
-	ok := os.write_entire_file("./cartridge/assets.bin", out_data);
+	ok := os.write_entire_file(file_path, out_data);
 	if (!ok) {
 		fmt.println("Failed to write assets!");
 	}
 }
 
-LoadAssets :: proc() {
-	data, ok := os.read_entire_file_from_filename("./cartridge/assets.bin");
+LoadAssets :: proc(file_path: string) {
+	data, ok := os.read_entire_file_from_filename(file_path);
 	defer delete(data);
 
 	// if there isn't assets don't load
