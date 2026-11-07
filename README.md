@@ -18,6 +18,7 @@ Resize the console window while playing:
 | **CPU / Scripting** | Lua 5.4 | Standardized at 60 FPS|
 | **Display** | 128 × 128 pixels | Low-res retro canvas with a 2-bit color palette (4 colors) |
 | **Memory** | 16 KB RAM | User-accessible memory space via custom `peek` and `poke` APIs |
+| **Cartridge** | 32 KB | Cartridge maximum size |
 | **Input** | 6 Buttons | **Arrows**, **Z** (Button A), **X** (Button B) |
 | **Audio** | 2 Channels | Dedicated Pulse wave and Noise wave sound channels |
 | **Sprites** | 128 Sprites | 8×8 pixel sprites with 8 metadata flags per sprite (1 byte) |
